@@ -1,0 +1,12 @@
+#!/bin/bash
+
+swapoff /dev/zram0
+swapoff /dev/zram1
+swapoff /dev/zram2
+
+echo 1 > /sys/block/zram0/reset
+echo 1 > /sys/block/zram1/reset
+echo 1 > /sys/block/zram2/reset
+
+sleep .5
+modprobe -r zram

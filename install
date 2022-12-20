@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# chmod +x install
+# ./install
+#
+# systemctl enable zram
+# systemctl start zram
+# systemctl status zram
+#
+#       ● zram.service - zRAM block devices swapping
+#         Loaded: loaded (/etc/systemd/system/zram.service; enabled; vendor preset: disabled)
+#         Active: active (exited) since Wed 2022-12-21 01:20:09 MSK; 8min ago
+#         Main PID: 2184812 (code=exited, status=0/SUCCESS)
+#         Tasks: 0 (limit: 205232)
+#         Memory: 0B
+#         CGroup: /system.slice/zram.service
+#
+
+/usr/bin/cp zram.service /etc/systemd/system/
+/usr/bin/cp zram.start /usr/local/bin/
+/usr/bin/cp zram.stop /usr/local/bin/
+
+/usr/bin/chmod +x /usr/local/bin/zram*
